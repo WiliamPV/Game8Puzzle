@@ -7,15 +7,15 @@ import java.util.Queue;
 public class Game8Puzzle {
 	static Nodo vFinal = new Nodo("123456780");
 	
-	public static void main(String[] args) throws InterruptedException {
-		Nodo inicial = new Nodo ("123456708");
+	public static void main(String[] args) {
+		Nodo inicial = new Nodo ("123406758");
 		
 		System.out.println("Valor Incial: "+inicial.getValor());
 		Nodo respuesta = busquedaPorAnchura(inicial);
 		System.out.println("Valor Final: "+respuesta.getValor());
 	}
 	
-	public static Nodo busquedaPorAnchura (Nodo inicial) throws InterruptedException {
+	public static Nodo busquedaPorAnchura (Nodo inicial) {
 		if(inicial.getValor().equals(vFinal.getValor()))
 			return inicial;	
 		
@@ -36,7 +36,6 @@ public class Game8Puzzle {
                 if(!Visitados.contains(hijo))
                 {
                 	System.out.println(hijo.getValor());
-                	Thread.sleep(1000);
                 	cola.add(hijo);
                 	Visitados.add(hijo);
                 }
